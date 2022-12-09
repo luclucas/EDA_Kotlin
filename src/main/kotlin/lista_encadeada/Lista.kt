@@ -1,5 +1,7 @@
 package lista_encadeada
 
+import java.lang.NullPointerException
+
 /*
 * A lista encadeada se dá quando se quer armazenar vários dados, mas não se tem noção de quantos
 *
@@ -74,4 +76,15 @@ class Lista <T> {
         print("]")
     }
 
+    fun find(posicao: Int): T? {
+
+            var p = header
+            var k = 0
+            while (k != posicao) {
+                p = p!!.prox
+                k++
+            }
+            return p!!.valor
+
+    }
 }
